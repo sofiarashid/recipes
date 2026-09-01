@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Recipes — Sofía's Kitchen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html">
+            <span>♡ Sofía's</span> Kitchen
+        </a>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Recipes</a>
+        </nav>
+
+        <!-- DARK MODE TOGGLE -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            ◐
+        </button>
+
+        <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+            ☰
+        </button>
+
+    </header>
+
+
+    <main class="page">
+
+        <a class="back" href="index.html">
+            ← All categories
+        </a>
+
+        <div class="section-heading category-title">
+
+            <p class="eyebrow" id="category-eyebrow"></p>
+
+            <h1 id="category-name"></h1>
+
+            <p id="category-description" class="muted"></p>
+
+        </div>
+
+        <section id="recipe-grid" class="recipe-grid"></section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © <span id="year"></span> Sofía's Kitchen
+        </p>
+
+    </footer>
+
+
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

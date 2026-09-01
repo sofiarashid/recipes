@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Recipe — Sofía's Kitchen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html">
+            <span>♡ Sofía's</span> Kitchen
+        </a>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Recipes</a>
+        </nav>
+
+        <!-- DARK MODE TOGGLE -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            ◐
+        </button>
+
+        <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+            ☰
+        </button>
+
+    </header>
+
+
+    <main class="page recipe-page">
+
+        <a class="back" href="javascript:history.back()">
+            ← Back
+        </a>
+
+        <article id="recipe"></article>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © <span id="year"></span> Sofía's Kitchen
+        </p>
+
+    </footer>
+
+
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

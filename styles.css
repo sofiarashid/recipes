@@ -1,0 +1,940 @@
+:root {
+    --burgundy: #6f263d;
+    --burgundy-dark: #4e1a2a;
+
+    --pink: #d9aeb9;
+    --pink-light: #fff5f7;
+
+    --blue: #a9c3d2;
+    --blue-dark: #426276;
+
+    --green: #b4c9b3;
+    --lavender: #c5b5cf;
+    --peach: #d8b5a4;
+    --cream: #d8c5a4;
+    --rose: #d3a8b7;
+
+    --ink: #30282a;
+    --muted: #776c6f;
+    --line: #eadfe1;
+    --white: #f3e9e6;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    height: 78px;
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 253, 252, 0.94);
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.brand {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+.brand span {
+    color: var(--burgundy);
+    font-style: italic;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+
+    font-size: 0.9rem;
+
+    /* Moves Home + Recipes slightly to the right */
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.nav a:hover {
+    color: var(--burgundy);
+}
+
+
+/* =========================
+   DARK MODE TOGGLE
+========================= */
+
+.theme-toggle {
+    border: 0;
+    background: none;
+    color: inherit;
+
+    font-size: 1.25rem;
+    cursor: pointer;
+
+    padding: 5px;
+    margin-right: 20px;
+
+    line-height: 1;
+}
+
+.theme-toggle:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-button {
+    display: none;
+
+    border: 0;
+    background: none;
+    color: inherit;
+
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+.eyebrow {
+    color: var(--burgundy);
+
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    margin: 0 0 12px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    min-height: 500px;
+
+    padding: 90px 6vw;
+
+    display: grid;
+    grid-template-columns: 1fr 180px;
+
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(3.2rem, 7vw, 6rem);
+
+    margin: 0 0 24px;
+
+    letter-spacing: 0.08rem;
+}
+
+.hero-copy {
+    max-width: 560px;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BIG FLOWER ONLY
+========================= */
+
+.hero-flower {
+    font-size: 10rem;
+    color: var(--burgundy);
+    opacity: 1;
+    text-align: center;
+    transform: rotate(-15deg);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 12px 19px;
+
+    border-radius: 999px;
+
+    background: var(--burgundy);
+    color: white;
+
+    font-size: 0.88rem;
+}
+
+.button:hover {
+    background: var(--burgundy-dark);
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-wrap {
+    max-width: 1040px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 6vw;
+}
+
+.search-wrap label {
+    display: block;
+
+    font-family: var(--serif);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 10px;
+}
+
+.search-wrap input {
+    width: 100%;
+
+    border: 1px solid var(--line);
+
+    border-radius: 999px;
+
+    padding: 15px 20px;
+
+    font: inherit;
+
+    outline: none;
+
+    background: #fff;
+    color: var(--ink);
+}
+
+.search-wrap input:focus {
+    border-color: var(--burgundy);
+
+    box-shadow:
+        0 0 0 4px var(--pink-light);
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories-section {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 0 6vw 90px;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.category-title h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+
+    margin: 0;
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================
+   SHORTER CATEGORY BOXES
+========================= */
+
+.category-card {
+    min-height: 140px;
+
+    padding: 20px 24px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================
+   CATEGORY HOVER
+========================= */
+
+.category-card:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(0.88);
+}
+
+.category-card h3 {
+    font-size: 1.35rem;
+
+    margin: 0 0 6px;
+}
+
+.category-card p {
+    color: var(--muted);
+
+    font-size: 0.85rem;
+
+    margin: 0 0 10px;
+}
+
+.category-card small {
+    color: var(--burgundy);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================
+   NO SMALL CATEGORY FLOWERS
+========================= */
+
+.category-symbol {
+    display: none;
+}
+
+
+/* =========================
+   CATEGORY COLORS
+========================= */
+
+.pink {
+    background: var(--pink);
+}
+
+.burgundy {
+    background: #c99aa8;
+}
+
+.blue {
+    background: var(--blue);
+}
+
+.green {
+    background: var(--green);
+}
+
+.lavender {
+    background: var(--lavender);
+}
+
+.peach {
+    background: var(--peach);
+}
+
+.cream {
+    background: var(--cream);
+}
+
+.rose {
+    background: var(--rose);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 6vw;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 55px 6vw 90px;
+}
+
+.back {
+    font-size: 0.8rem;
+
+    color: var(--muted);
+
+    display: inline-block;
+
+    margin-bottom: 45px;
+}
+
+.back:hover {
+    color: var(--burgundy);
+}
+
+.muted {
+    color: var(--muted);
+
+    max-width: 620px;
+}
+
+
+/* =========================
+   RECIPE CARDS
+========================= */
+
+.recipe-grid,
+.search-results {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.recipe-card {
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(80, 35, 45, 0.07);
+}
+
+.card-body {
+    padding: 24px 22px 26px;
+}
+
+.card-category {
+    color: var(--burgundy);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.13em;
+
+    font-size: 0.62rem;
+
+    font-weight: 600;
+
+    margin: 0 0 7px;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+
+    margin: 0 0 8px;
+}
+
+.card-body p:not(.card-category) {
+    color: var(--muted);
+
+    font-size: 0.82rem;
+
+    margin: 0;
+}
+
+
+/* =========================
+   EMPTY STATES
+========================= */
+
+.empty,
+.empty-state {
+    color: var(--muted);
+
+    padding: 30px 0;
+}
+
+.empty-state {
+    text-align: center;
+
+    padding: 90px 20px;
+}
+
+.empty-state span {
+    color: var(--burgundy);
+
+    font-size: 3rem;
+}
+
+.empty-state h2 {
+    color: var(--ink);
+
+    font-size: 2rem;
+}
+
+
+/* =========================
+   RECIPE PAGE
+========================= */
+
+.recipe-top {
+    width: 100%;
+
+    display: block;
+
+    margin-bottom: 85px;
+}
+
+.recipe-photo {
+    display: none;
+}
+
+.recipe-intro {
+    width: 100%;
+
+    max-width: 1050px;
+}
+
+.recipe-intro h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    margin: 0 0 24px;
+
+    letter-spacing: -0.04em;
+
+    max-width: 1050px;
+}
+
+.recipe-description {
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    max-width: 760px;
+
+    margin: 0;
+}
+
+.recipe-meta {
+    display: flex;
+
+    gap: 28px;
+
+    margin-top: 30px;
+}
+
+.recipe-meta span {
+    display: flex;
+
+    flex-direction: column;
+
+    font-size: 0.88rem;
+
+    color: var(--muted);
+}
+
+.recipe-meta b {
+    color: var(--ink);
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================
+   INGREDIENTS + INSTRUCTIONS
+========================= */
+
+.recipe-content {
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.recipe-content h2 {
+    font-size: 2rem;
+
+    margin-top: 0;
+}
+
+.ingredients,
+.instructions {
+    padding-left: 22px;
+}
+
+.ingredients li {
+    margin-bottom: 11px;
+}
+
+.instructions li {
+    margin-bottom: 22px;
+
+    padding-left: 6px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #000000;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   DARK MODE HEADER
+========================= */
+
+body.dark-mode .site-header {
+    background: rgba(0, 0, 0, 0.94);
+
+    border-bottom-color: #333333;
+}
+
+body.dark-mode .brand span {
+    color: #ffffff;
+}
+
+body.dark-mode .nav a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   DARK MODE MAIN TEXT
+========================= */
+
+body.dark-mode .hero-copy,
+body.dark-mode .muted,
+body.dark-mode .recipe-description {
+    color: #bbbbbb;
+}
+
+body.dark-mode .eyebrow {
+    color: #ffffff;
+}
+
+
+/* =========================
+   DARK MODE SEARCH
+========================= */
+
+body.dark-mode .search-wrap input {
+    background: #111111;
+
+    color: #ffffff;
+
+    border-color: #333333;
+}
+
+body.dark-mode .search-wrap input::placeholder {
+    color: #888888;
+}
+
+
+/* =========================
+   DARK MODE RECIPE CARDS
+========================= */
+
+body.dark-mode .recipe-card {
+    background: #111111;
+
+    border-color: #333333;
+}
+
+body.dark-mode .recipe-card:hover {
+    background: #000000;
+
+    box-shadow:
+        0 12px 30px rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================
+   DARK MODE CATEGORY COLORS
+========================= */
+
+body.dark-mode .pink {
+    background: #9e6978;
+}
+
+body.dark-mode .burgundy {
+    background: #8e5d6b;
+}
+
+body.dark-mode .blue {
+    background: #607f91;
+}
+
+body.dark-mode .green {
+    background: #71876f;
+}
+
+body.dark-mode .lavender {
+    background: #796b84;
+}
+
+body.dark-mode .peach {
+    background: #8d6b5d;
+}
+
+body.dark-mode .cream {
+    background: #8c7959;
+}
+
+body.dark-mode .rose {
+    background: #916777;
+}
+
+
+/* =========================
+   DARK MODE CATEGORY TEXT
+========================= */
+
+/* Category descriptions become WHITE */
+body.dark-mode .category-card p {
+    color: #ffffff;
+}
+
+
+/* Category hover becomes darker */
+body.dark-mode .category-card:hover {
+    filter: brightness(0.72);
+}
+
+
+/* =========================
+   DARK MODE FOOTER
+========================= */
+
+body.dark-mode footer {
+    background: #000000;
+
+    border-top-color: #333333;
+
+    color: #999999;
+}
+
+
+/* =========================
+   MOBILE / TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recipe-grid,
+    .search-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recipe-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .recipe-top {
+        margin-bottom: 55px;
+    }
+}
+
+
+@media (max-width: 620px) {
+
+    .site-header {
+        height: 68px;
+    }
+
+    .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 0;
+
+        right: 0;
+
+        margin: 0;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--line);
+
+        padding: 20px 6vw;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    body.dark-mode .nav {
+        background: #000000;
+
+        border-bottom-color: #333333;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .theme-toggle {
+        margin-right: 12px;
+    }
+
+    .hero {
+        min-height: 520px;
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+    }
+
+    .hero-flower {
+        display: none;
+    }
+
+    .category-grid,
+    .recipe-grid,
+    .search-results {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-section {
+        padding-bottom: 65px;
+    }
+
+    .recipe-page {
+        padding-top: 35px;
+    }
+
+    .recipe-intro h1 {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+    }
+
+    .recipe-description {
+        font-size: 0.95rem;
+    }
+
+    .recipe-content {
+        gap: 45px;
+    }
+}
