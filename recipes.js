@@ -351,12 +351,12 @@ const RECIPES = [
     ],
 
     instructions: [
-      "Use a 4:2:1 ratio.",
-      "Combine the mango puree, heavy cream, and sweetened condensed milk.",
-      "Add lime juice to taste.",
-      "Add saffron to taste.",
-      "Mix until smooth and well combined.",
-      "Chill or freeze according to your preferred ice cream method."
+      "Whip the heavy cream until stiff peaks form",  
+      "Combine the mango puree and sweetened condensed milk",
+      "Combine the mango and milk mixture with the whipped cream",
+      "Mix saffron with an ice cube and add to the ice cream mixture",
+      "Mix until smooth and well combined",
+      "Chill or freeze according to your preferred ice cream method"
     ]
   },
 
@@ -865,3 +865,9 @@ const RECIPES = [
     ]
   },
 ];
+
+RECIPES.sort((a, b) =>
+  a.title.localeCompare(b.title, undefined, {
+    sensitivity: "base"
+  })
+);

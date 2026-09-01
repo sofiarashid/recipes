@@ -16,6 +16,7 @@ function escapeHTML(value = "") {
 ========================= */
 
 function setupTheme() {
+
   const themeToggle = $("#theme-toggle");
 
   // Keep the user's choice between pages
@@ -29,6 +30,7 @@ function setupTheme() {
     document.body.classList.contains("dark-mode") ? "☀" : "◐";
 
   themeToggle.addEventListener("click", () => {
+
     document.body.classList.toggle("dark-mode");
 
     const isDark = document.body.classList.contains("dark-mode");
@@ -45,8 +47,13 @@ function setupTheme() {
 ========================= */
 
 function recipeCard(recipe) {
+
   return `
-    <a class="recipe-card" href="recipe.html?id=${encodeURIComponent(recipe.id)}">
+    <a
+      class="recipe-card"
+      href="recipe.html?id=${encodeURIComponent(recipe.id)}"
+    >
+
       <div class="card-body">
 
         <p class="card-category">
@@ -62,6 +69,7 @@ function recipeCard(recipe) {
         }
 
       </div>
+
     </a>
   `;
 }
@@ -72,7 +80,10 @@ function recipeCard(recipe) {
 ========================= */
 
 function categoryCard(key, data) {
-  const count = RECIPES.filter(r => r.category === key).length;
+
+  const count = RECIPES.filter(
+    r => r.category === key
+  ).length;
 
   return `
     <a
@@ -81,6 +92,7 @@ function categoryCard(key, data) {
     >
 
       <div>
+
         <h3>${escapeHTML(data.name)}</h3>
 
         <p>${escapeHTML(data.description)}</p>
@@ -88,6 +100,7 @@ function categoryCard(key, data) {
         <small>
           ${count} ${count === 1 ? "recipe" : "recipes"}
         </small>
+
       </div>
 
     </a>
@@ -100,12 +113,14 @@ function categoryCard(key, data) {
 ========================= */
 
 function setupMenu() {
+
   const button = $(".menu-button");
   const nav = $(".nav");
 
   if (!button || !nav) return;
 
   button.addEventListener("click", () => {
+
     const open = nav.classList.toggle("open");
 
     button.setAttribute("aria-expanded", open);
@@ -114,31 +129,31 @@ function setupMenu() {
 
 
 /* =========================
-   HOME PAGE
+   SEARCH
 ========================= */
 
-function setupHome() {
-  const grid = $("#category-grid");
-
-  if (!grid) return;
-
-  const showCategories = () => {
-    grid.innerHTML = Object.entries(CATEGORIES)
-      .map(([key, data]) => categoryCard(key, data))
-      .join("");
-  };
-
-  showCategories();
+function setupSearch() {
 
   const search = $("#search");
+  const results = $("#search-results");
+  const categoryGrid = $("#category-grid");
 
-  if (!search) return;
+  if (!search || !results) return;
 
   search.addEventListener("input", () => {
+
     const q = search.value.trim().toLowerCase();
 
+    // If search is empty, clear results
+    // and show the normal homepage categories again
     if (!q) {
-      showCategories();
+
+      results.innerHTML = "";
+
+      if (categoryGrid) {
+        categoryGrid.style.display = "";
+      }
+
       return;
     }
 
@@ -154,10 +169,35 @@ function setupHome() {
         .includes(q)
     );
 
-    grid.innerHTML = matches.length
-      ? `<div class="search-results">${matches.map(recipeCard).join("")}</div>`
-      : `<p class="empty">No recipes found yet. Try another search.</p>`;
+    // On the homepage, hide categories while searching
+    if (categoryGrid) {
+      categoryGrid.style.display = "none";
+    }
+
+    results.innerHTML = matches.length
+      ? matches.map(recipeCard).join("")
+      : `
+          <p class="empty">
+            No recipes found yet. Try another search.
+          </p>
+        `;
   });
+}
+
+
+/* =========================
+   HOME PAGE
+========================= */
+
+function setupHome() {
+
+  const grid = $("#category-grid");
+
+  if (!grid) return;
+
+  grid.innerHTML = Object.entries(CATEGORIES)
+    .map(([key, data]) => categoryCard(key, data))
+    .join("");
 }
 
 
@@ -166,11 +206,13 @@ function setupHome() {
 ========================= */
 
 function setupCategory() {
+
   const grid = $("#recipe-grid");
 
   if (!grid) return;
 
   const key = new URLSearchParams(location.search).get("category");
+
   const data = CATEGORIES[key];
 
   if (!data) {
@@ -179,17 +221,26 @@ function setupCategory() {
   }
 
   $("#category-eyebrow").textContent = "Recipes";
+
   $("#category-name").textContent = data.name;
+
   $("#category-description").textContent = data.description;
 
-  const recipes = RECIPES.filter(r => r.category === key);
+  const recipes = RECIPES.filter(
+    r => r.category === key
+  );
 
   grid.innerHTML = recipes.length
     ? recipes.map(recipeCard).join("")
     : `
       <div class="empty-state">
+
         <h2>Recipes coming soon.</h2>
-        <p>Add your first recipe to this category and it will appear here.</p>
+
+        <p>
+          Add your first recipe to this category and it will appear here.
+        </p>
+
       </div>
     `;
 }
@@ -200,34 +251,48 @@ function setupCategory() {
 ========================= */
 
 function renderIngredients(groups) {
+
   return groups.map(group => `
+
     <div class="ingredient-group">
 
       <h3>${escapeHTML(group.title)}</h3>
 
       <ul>
+
         ${group.items.map(item => {
 
           if (typeof item === "string") {
-            return `<li>${escapeHTML(item)}</li>`;
+
+            return `
+              <li>
+                ${escapeHTML(item)}
+              </li>
+            `;
           }
 
           return `
             <li>
+
               ${escapeHTML(item.text)}
 
               <ul>
+
                 ${item.subitems.map(subitem =>
                   `<li>${escapeHTML(subitem)}</li>`
                 ).join("")}
+
               </ul>
 
             </li>
           `;
+
         }).join("")}
+
       </ul>
 
     </div>
+
   `).join("");
 }
 
@@ -237,14 +302,19 @@ function renderIngredients(groups) {
 ========================= */
 
 function setupRecipe() {
+
   const target = $("#recipe");
 
   if (!target) return;
 
   const id = new URLSearchParams(location.search).get("id");
-  const recipe = RECIPES.find(r => r.id === id);
+
+  const recipe = RECIPES.find(
+    r => r.id === id
+  );
 
   if (!recipe) {
+
     target.innerHTML = `
       <div class="empty-state">
 
@@ -265,6 +335,7 @@ function setupRecipe() {
   const cat = CATEGORIES[recipe.category];
 
   target.innerHTML = `
+
     <div class="recipe-top">
 
       <div class="recipe-intro">
@@ -293,8 +364,11 @@ function setupRecipe() {
             recipe.time
               ? `
                 <span>
+
                   <b>Time</b>
+
                   ${escapeHTML(recipe.time)}
+
                 </span>
               `
               : ""
@@ -304,8 +378,11 @@ function setupRecipe() {
             recipe.servings
               ? `
                 <span>
+
                   <b>Serves</b>
+
                   ${escapeHTML(recipe.servings)}
+
                 </span>
               `
               : ""
@@ -325,7 +402,9 @@ function setupRecipe() {
         <h2>Ingredients</h2>
 
         <div class="ingredients">
+
           ${renderIngredients(recipe.ingredients || [])}
+
         </div>
 
       </section>
@@ -336,15 +415,18 @@ function setupRecipe() {
         <h2>Recipe</h2>
 
         <ol class="instructions">
+
           ${(recipe.instructions || [])
             .map(x => `<li>${escapeHTML(x)}</li>`)
             .join("")
           }
+
         </ol>
 
       </section>
 
     </div>
+
   `;
 }
 
@@ -364,6 +446,7 @@ if ($("#year")) {
 
 setupTheme();
 setupMenu();
+setupSearch();
 setupHome();
 setupCategory();
 setupRecipe();
