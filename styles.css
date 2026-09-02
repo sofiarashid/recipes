@@ -2,7 +2,7 @@
     --burgundy: #6f263d;
     --burgundy-dark: #4e1a2a;
 
-    --pink: #d9aeb9;
+     --pink: #d9aeb9;
     --pink-light: #fff5f7;
 
     --blue: #a9c3d2;
@@ -22,9 +22,8 @@
     --sans: "DM Sans", Arial, sans-serif;
 }
 
-
 /* =========================
-   RESET
+RESET
 ========================= */
 
 * {
@@ -42,9 +41,10 @@ body {
     font-family: var(--sans);
     line-height: 1.6;
 
-    transition:
+     transition:
         background-color 0.25s ease,
         color 0.25s ease;
+    
 }
 
 a {
@@ -52,16 +52,15 @@ a {
     text-decoration: none;
 }
 
-
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 .site-header {
     height: 78px;
     padding: 0 6vw;
 
-    display: flex;
+     display: flex;
     align-items: center;
 
     border-bottom: 1px solid var(--line);
@@ -76,6 +75,7 @@ a {
     transition:
         background-color 0.25s ease,
         border-color 0.25s ease;
+    
 }
 
 .brand {
@@ -94,20 +94,20 @@ a {
     display: flex;
     gap: 28px;
 
-    font-size: 0.9rem;
+     font-size: 0.9rem;
 
     /* Moves Home + Recipes slightly to the right */
     margin-left: auto;
     margin-right: 25px;
+    
 }
 
 .nav a:hover {
     color: var(--burgundy);
 }
 
-
 /* =========================
-   DARK MODE TOGGLE
+DARK MODE TOGGLE
 ========================= */
 
 .theme-toggle {
@@ -115,22 +115,22 @@ a {
     background: none;
     color: inherit;
 
-    font-size: 1.25rem;
+     font-size: 1.25rem;
     cursor: pointer;
 
     padding: 5px;
     margin-right: 20px;
 
     line-height: 1;
+    
 }
 
 .theme-toggle:hover {
     opacity: 0.7;
 }
 
-
 /* =========================
-   MENU
+MENU
 ========================= */
 
 .menu-button {
@@ -144,21 +144,21 @@ a {
     cursor: pointer;
 }
 
-
 /* =========================
-   GENERAL
+GENERAL
 ========================= */
 
 .eyebrow {
     color: var(--burgundy);
 
-    text-transform: uppercase;
+     text-transform: uppercase;
     letter-spacing: 0.16em;
 
     font-size: 0.7rem;
     font-weight: 600;
 
     margin: 0 0 12px;
+    
 }
 
 h1,
@@ -169,16 +169,15 @@ h3 {
     line-height: 1.12;
 }
 
-
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero {
     max-width: 1180px;
     margin: 0 auto;
 
-    min-height: 500px;
+     min-height: 500px;
 
     padding: 90px 6vw;
 
@@ -186,29 +185,31 @@ h3 {
     grid-template-columns: 1fr 180px;
 
     align-items: center;
+    
 }
 
 .hero h1 {
     font-size: clamp(3.2rem, 7vw, 6rem);
 
-    margin: 0 0 24px;
+     margin: 0 0 24px;
 
     letter-spacing: 0.08rem;
+    
 }
 
 .hero-copy {
     max-width: 560px;
 
-    color: var(--muted);
+     color: var(--muted);
 
     font-size: 1.05rem;
 
     margin-bottom: 30px;
+    
 }
 
-
 /* =========================
-   BIG FLOWER ONLY
+BIG FLOWER ONLY
 ========================= */
 
 .hero-flower {
@@ -220,13 +221,13 @@ h3 {
 }
 
 /* =========================
-   BUTTON
+BUTTON
 ========================= */
 
 .button {
     display: inline-block;
 
-    padding: 12px 19px;
+     padding: 12px 19px;
 
     border-radius: 999px;
 
@@ -234,39 +235,41 @@ h3 {
     color: white;
 
     font-size: 0.88rem;
+    
 }
 
 .button:hover {
     background: var(--burgundy-dark);
 }
 
-
 /* =========================
-   SEARCH
+SEARCH
 ========================= */
 
 .search-wrap {
     max-width: 1040px;
 
-    margin: 0 auto 80px;
+     margin: 0 auto 80px;
 
     padding: 0 6vw;
+    
 }
 
 .search-wrap label {
     display: block;
 
-    font-family: var(--serif);
+     font-family: var(--serif);
 
     font-size: 1.3rem;
 
     margin-bottom: 10px;
+    
 }
 
 .search-wrap input {
     width: 100%;
 
-    border: 1px solid var(--line);
+     border: 1px solid var(--line);
 
     border-radius: 999px;
 
@@ -278,26 +281,28 @@ h3 {
 
     background: #fff;
     color: var(--ink);
+    
 }
 
 .search-wrap input:focus {
     border-color: var(--burgundy);
 
-    box-shadow:
+     box-shadow:
         0 0 0 4px var(--pink-light);
+    
 }
 
-
 /* =========================
-   CATEGORIES
+CATEGORIES
 ========================= */
 
 .categories-section {
     max-width: 1180px;
 
-    margin: 0 auto;
+     margin: 0 auto;
 
     padding: 0 6vw 90px;
+    
 }
 
 .section-heading {
@@ -308,7 +313,8 @@ h3 {
 .category-title h1 {
     font-size: clamp(2.2rem, 5vw, 3.8rem);
 
-    margin: 0;
+     margin: 0;
+   
 }
 
 .category-grid {
@@ -317,17 +323,17 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 16px;
+    
 }
 
-
 /* =========================
-   SHORTER CATEGORY BOXES
+SHORTER CATEGORY BOXES
 ========================= */
 
 .category-card {
     min-height: 140px;
 
-    padding: 20px 24px;
+     padding: 20px 24px;
 
     border-radius: 22px;
 
@@ -340,51 +346,51 @@ h3 {
     transition:
         transform 0.2s ease,
         filter 0.2s ease;
+   
 }
 
-
 /* =========================
-   CATEGORY HOVER
+CATEGORY HOVER
 ========================= */
 
 .category-card:hover {
     transform: translateY(-3px);
 
-    filter: brightness(0.88);
+  filter: brightness(0.88);
+  
 }
 
 .category-card h3 {
     font-size: 1.35rem;
-
-    margin: 0 0 6px;
+margin: 0 0 6px;
+ 
 }
 
 .category-card p {
     color: var(--muted);
 
-    font-size: 0.85rem;
+font-size: 0.85rem;
 
     margin: 0 0 10px;
+
 }
 
 .category-card small {
     color: var(--burgundy);
+font-size: 0.72rem;
 
-    font-size: 0.72rem;
 }
 
-
 /* =========================
-   NO SMALL CATEGORY FLOWERS
+NO SMALL CATEGORY FLOWERS
 ========================= */
 
 .category-symbol {
     display: none;
 }
 
-
 /* =========================
-   CATEGORY COLORS
+CATEGORY COLORS
 ========================= */
 
 .pink {
@@ -419,9 +425,8 @@ h3 {
     background: var(--rose);
 }
 
-
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer {
@@ -432,29 +437,31 @@ footer {
     color: var(--muted);
 
     font-size: 0.78rem;
+
 }
 
-
 /* =========================
-   PAGES
+PAGES
 ========================= */
 
 .page {
     max-width: 1180px;
 
-    margin: 0 auto;
+margin: 0 auto;
 
     padding: 55px 6vw 90px;
+
 }
 
 .back {
     font-size: 0.8rem;
 
-    color: var(--muted);
+color: var(--muted);
 
     display: inline-block;
 
     margin-bottom: 45px;
+
 }
 
 .back:hover {
@@ -464,12 +471,12 @@ footer {
 .muted {
     color: var(--muted);
 
-    max-width: 620px;
+ max-width: 620px;
+
 }
 
-
 /* =========================
-   RECIPE CARDS
+RECIPE CARDS
 ========================= */
 
 .recipe-grid,
@@ -479,11 +486,10 @@ footer {
     gap: 20px;
 }
 
-
 .recipe-card {
     border: 1px solid var(--line);
 
-    border-radius: 20px;
+border-radius: 20px;
 
     overflow: hidden;
 
@@ -493,13 +499,15 @@ footer {
         transform 0.2s ease,
         box-shadow 0.2s ease,
         background-color 0.2s ease;
+
 }
 
 .recipe-card:hover {
     transform: translateY(-3px);
 
-    box-shadow:
+box-shadow:
         0 12px 30px rgba(80, 35, 45, 0.07);
+
 }
 
 .card-body {
@@ -509,7 +517,7 @@ footer {
 .card-category {
     color: var(--burgundy);
 
-    text-transform: uppercase;
+text-transform: uppercase;
 
     letter-spacing: 0.13em;
 
@@ -518,63 +526,69 @@ footer {
     font-weight: 600;
 
     margin: 0 0 7px;
+
 }
 
 .card-body h3 {
     font-size: 1.4rem;
 
-    margin: 0 0 8px;
+margin: 0 0 8px;
+
 }
 
 .card-body p:not(.card-category) {
     color: var(--muted);
 
-    font-size: 0.82rem;
+font-size: 0.82rem;
 
     margin: 0;
+
 }
 
-
 /* =========================
-   EMPTY STATES
+EMPTY STATES
 ========================= */
 
 .empty,
 .empty-state {
     color: var(--muted);
 
-    padding: 30px 0;
+padding: 30px 0;
+
 }
 
 .empty-state {
     text-align: center;
 
-    padding: 90px 20px;
+padding: 90px 20px;
+
 }
 
 .empty-state span {
     color: var(--burgundy);
 
-    font-size: 3rem;
+font-size: 3rem;
+
 }
 
 .empty-state h2 {
     color: var(--ink);
 
-    font-size: 2rem;
+font-size: 2rem;
+
 }
 
-
 /* =========================
-   RECIPE PAGE
+RECIPE PAGE
 ========================= */
 
 .recipe-top {
     width: 100%;
 
-    display: block;
+display: block;
 
     margin-bottom: 85px;
+
 }
 
 .recipe-photo {
@@ -583,69 +597,68 @@ footer {
 
 .recipe-intro {
     width: 100%;
+ max-width: 1050px;
 
-    max-width: 1050px;
 }
 
 .recipe-intro h1 {
     font-size: clamp(3rem, 7vw, 6rem);
-
-    margin: 0 0 24px;
+margin: 0 0 24px;
 
     letter-spacing: -0.04em;
 
     max-width: 1050px;
+ 
 }
 
 .recipe-description {
     color: var(--muted);
-
-    font-size: 1.05rem;
+font-size: 1.05rem;
 
     max-width: 760px;
 
     margin: 0;
+ 
 }
 
 .recipe-meta {
     display: flex;
-
-    gap: 28px;
+gap: 28px;
 
     margin-top: 30px;
+
 }
 
 .recipe-meta span {
     display: flex;
-
-    flex-direction: column;
+flex-direction: column;
 
     font-size: 0.88rem;
 
     color: var(--muted);
+
 }
 
 .recipe-meta b {
     color: var(--ink);
 
-    font-size: 0.7rem;
+font-size: 0.7rem;
 
     text-transform: uppercase;
 
     letter-spacing: 0.12em;
 
     margin-bottom: 3px;
+
 }
 
-
 /* =========================
-   INGREDIENTS + INSTRUCTIONS
+INGREDIENTS + INSTRUCTIONS
 ========================= */
 
 .recipe-content {
     width: 100%;
-
-    margin: 0 auto;
+margin: 0 auto;
 
     display: grid;
 
@@ -658,8 +671,7 @@ footer {
 
 .recipe-content h2 {
     font-size: 2rem;
-
-    margin-top: 0;
+margin-top: 0;
 }
 
 .ingredients,
@@ -673,43 +685,37 @@ footer {
 
 .instructions li {
     margin-bottom: 22px;
-
-    padding-left: 6px;
+padding-left: 6px;
 }
 
-
 /* =========================
-   DARK MODE
+DARK MODE
 ========================= */
 
 body.dark-mode {
     background: #000000;
-
-    color: #ffffff;
+color: #ffffff;
 }
 
-
 /* =========================
-   DARK MODE HEADER
+DARK MODE HEADER
 ========================= */
 
 body.dark-mode .site-header {
     background: rgba(0, 0, 0, 0.94);
-
-    border-bottom-color: #333333;
+border-bottom-color: #333333;
 }
 
 body.dark-mode .brand span {
-    color: #ffffff;
+    color: var(--burgundy);
 }
 
 body.dark-mode .nav a:hover {
-    color: #ffffff;
+    color: var(--burgundy);
 }
 
-
 /* =========================
-   DARK MODE MAIN TEXT
+DARK MODE MAIN TEXT
 ========================= */
 
 body.dark-mode .hero-copy,
@@ -719,18 +725,20 @@ body.dark-mode .recipe-description {
 }
 
 body.dark-mode .eyebrow {
-    color: #ffffff;
+    color: var(--burgundy);
 }
 
+body.dark-mode .card-category {
+    color: var(--burgundy);
+}
 
 /* =========================
-   DARK MODE SEARCH
+DARK MODE SEARCH
 ========================= */
 
 body.dark-mode .search-wrap input {
     background: #111111;
-
-    color: #ffffff;
+ color: #ffffff;
 
     border-color: #333333;
 }
@@ -739,93 +747,98 @@ body.dark-mode .search-wrap input::placeholder {
     color: #888888;
 }
 
-
 /* =========================
-   DARK MODE RECIPE CARDS
+DARK MODE RECIPE CARDS
 ========================= */
 
 body.dark-mode .recipe-card {
     background: #111111;
-
-    border-color: #333333;
+border-color: #333333;
 }
 
 body.dark-mode .recipe-card:hover {
     background: #000000;
-
-    box-shadow:
+box-shadow:
         0 12px 30px rgba(255, 255, 255, 0.04);
 }
 
-
 /* =========================
-   DARK MODE CATEGORY COLORS
+DARK MODE CATEGORY COLORS
 ========================= */
 
 body.dark-mode .pink {
-    background: #9e6978;
+    background: #6f3f4d;
 }
 
 body.dark-mode .burgundy {
-    background: #8e5d6b;
+    background: #653746;
 }
 
 body.dark-mode .blue {
-    background: #607f91;
+    background: #3f5968;
 }
 
 body.dark-mode .green {
-    background: #71876f;
+    background: #40543f;
 }
 
 body.dark-mode .lavender {
-    background: #796b84;
+    background: #51465a;
 }
 
 body.dark-mode .peach {
-    background: #8d6b5d;
+    background: #60483e;
 }
 
 body.dark-mode .cream {
-    background: #8c7959;
+    background: #5c4d35;
 }
 
 body.dark-mode .rose {
-    background: #916777;
+    background: #5f404d;
 }
 
-
 /* =========================
-   DARK MODE CATEGORY TEXT
+DARK MODE CATEGORY TEXT
 ========================= */
 
-/* Category descriptions become WHITE */
+/* Category descriptions */
 body.dark-mode .category-card p {
-    color: #ffffff;
+    color: #c8bec1;
 }
 
-
-/* Category hover becomes darker */
-body.dark-mode .category-card:hover {
-    filter: brightness(0.72);
+/* Category recipe count */
+body.dark-mode .category-card small {
+    color: #d9aeb9;
 }
 
+/* Category titles */
+body.dark-mode .category-card h3 {
+    color: #f3e9e6;
+}
 
 /* =========================
-   DARK MODE FOOTER
+DARK MODE CATEGORY HOVER
+========================= */
+
+body.dark-mode .category-card:hover {
+    filter: brightness(1.15);
+}
+
+/* =========================
+DARK MODE FOOTER
 ========================= */
 
 body.dark-mode footer {
     background: #000000;
-
-    border-top-color: #333333;
+ border-top-color: #333333;
 
     color: #999999;
+    
 }
 
-
 /* =========================
-   MOBILE / TABLET
+MOBILE / TABLET
 ========================= */
 
 @media (max-width: 850px) {
@@ -848,12 +861,11 @@ body.dark-mode footer {
     .recipe-top {
         margin-bottom: 55px;
     }
+
 }
 
-
 @media (max-width: 620px) {
-
-    .site-header {
+ .site-header {
         height: 68px;
     }
 
@@ -936,4 +948,5 @@ body.dark-mode footer {
     .recipe-content {
         gap: 45px;
     }
+
 }
